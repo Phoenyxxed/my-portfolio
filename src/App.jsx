@@ -29,7 +29,7 @@ const Navbar = () => {
 const About = () => (
   <section id="about">
     <div className="about-container">
-      <img src="src\assets\images\Co1stDay.JPG" alt="Phoenyx Meira" className="about-photo" />
+      <img src="assets\images\Co1stDay.JPG" alt="Phoenyx Meira" className="about-photo" />
       <div className="about-text">
         <h2>About Me</h2>
         <p>Hello! My name is Phoenyx Meira. I am a 20 year-old Brazilian-American from New Haven, CT. 
@@ -71,8 +71,12 @@ const Projects = () => (
 // Technologies Section
 const Technologies = () => (
   <section id="technologies">
-    <h2>Technologies I Use</h2>
-    <p>React, Node.js, Tailwind CSS, and more!</p>
+    <h2>Technologies I Know How To Use</h2>
+    <p>
+    I know how to code in HTML, CSS, javascript, python and java! 
+    I know how to use Adobe Premiere and Photoshop. I also have certifications in Microsoft Word, Excel, and Powerpoint.
+    I know how to make ethernet cables and how to build PC's which I do for fun and 
+    </p>
   </section>
 );
 
