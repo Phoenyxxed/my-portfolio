@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 // Navbar component
-const Navbar = () => (
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#interests">Interests</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#technologies">Technologies</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-);
+const Navbar = () => {
+  const [isActive, setIsActive] = useState(false); // To toggle the navbar visibility
+
+  const toggleMenu = () => setIsActive(!isActive);
+
+  return (
+    <nav className={isActive ? "active" : ""}>
+      <div className="navbar-toggle" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  );
+};
 
 // About Section
 const About = () => (
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm a passionate developer who loves creating intuitive and efficient web solutions.</p>
+    <p>
+      Hello! My name is Phoenyx Meira. I am a 20 year-old Brazilian-American from
+      New Haven, CT. I am a junior at Southern Connecticut State University
+      majoring in Computer Science with a concentration in Cybersecurity and
+      with minors in Math and Honor Transdiciplinary Concepts and Perspectives.
+      I grew up in Waterbury, CT and went to W.F. Kaynor Technical Highschool,
+      where I specialized in Information Systems Technology (or IST for short).
+      There I got certifications in the Microsoft suite and learned how to use
+      the Adobe suite. I also learned Python and the basics of web development
+      with HTML and CSS.
+    </p>
   </section>
 );
 
@@ -27,8 +49,11 @@ const Interests = () => (
     <h2>My Interests</h2>
     <ul>
       <li>Coding</li>
-      <li>Photography</li>
-      <li>Traveling</li>
+      <li>Drawing</li>
+      <li>Reading</li>
+      <li>Singing</li>
+      <li>Binge-Watching Shows</li>
+      <li>Sleeping :)</li>
     </ul>
   </section>
 );
@@ -54,15 +79,33 @@ const Technologies = () => (
 
 // Contact Form
 const ContactForm = () => {
+  const form = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent!");
+
+    emailjs
+      .sendForm(
+        'service_2v3l799',
+        'template_1sou56n',
+        form.current,
+        'G_SLtcwUbV3meXbyR'
+      )
+      .then(
+        (result) => {
+          alert('Message sent successfully!');
+        },
+        (error) => {
+          console.error('Failed to send message:', error);
+          alert('Failed to send the message. Please try again.');
+        }
+      );
   };
 
   return (
     <section id="contact">
       <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -84,5 +127,6 @@ const App = () => (
   </>
 );
 
-// Exporting the App component
+export { ContactForm };
+export { Navbar };
 export default App;
