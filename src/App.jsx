@@ -28,21 +28,20 @@ const Navbar = () => {
 // About Section
 const About = () => (
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! My name is Phoenyx Meira. I am a 20 year-old Brazilian-American from
-      New Haven, CT. I am a junior at Southern Connecticut State University
-      majoring in Computer Science with a concentration in Cybersecurity and
-      with minors in Math and Honor Transdiciplinary Concepts and Perspectives.
-      I grew up in Waterbury, CT and went to W.F. Kaynor Technical Highschool,
-      where I specialized in Information Systems Technology (or IST for short).
-      There I got certifications in the Microsoft suite and learned how to use
-      the Adobe suite. I also learned Python and the basics of web development
-      with HTML and CSS.
-    </p>
+    <div className="about-container">
+      <img src="src\assets\images\Co1stDay.JPG" alt="Phoenyx Meira" className="about-photo" />
+      <div className="about-text">
+        <h2>About Me</h2>
+        <p>Hello! My name is Phoenyx Meira. I am a 20 year-old Brazilian-American from New Haven, CT. 
+        I am a junior at Southern Connecticut State University majoring in Computer Science 
+        with a concentration in Cybersecurity and with minors in Math and Honor Transdiciplinary Concepts and Perspectives. 
+        I grew up in Waterbury, CT and went to W.F. Kaynor Technical Highschool, where I specialized in Information Systems Technology
+        (or IST for short). There I got certifications in the Microsoft suite and learned how to use the Adobe suite.
+        I also learned Python and the basics of web development with HTML and CSS.</p>
+      </div>
+    </div>
   </section>
 );
-
 // Interests Section
 const Interests = () => (
   <section id="interests">

@@ -112,6 +112,43 @@ nav ul li {
   }
 }
 
+/* About Section */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-photo {
+  width: 150px; /* Adjust the size of the image */
+  height: 150px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover;
+  float: right;
+}
+
+.about-text {
+  flex: 1; /* Ensures the text takes up the remaining space */
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-photo {
+    float: none; /* Remove float on smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
 /* Section Styles */
 section {
   padding: 100px 20px;
@@ -208,7 +245,285 @@ footer {
 }
 
 footer a {
-  color: #FFD700;  /* Yellow links */
+  color: #ceaf00;  /* Yellow links */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 80px 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+  }
+
+  .card {
+    margin: 10px 0;
+  }
+
+  footer {
+    padding: 20px 0;
+  }
+}
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe77d;  /* Light yellow for clean look */
+  color: #5200af;  /* Dark text for readability */
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #4B0082; /* Purple for headings */
+}
+
+/* Navbar Styles */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFDC00;  /* Bright yellow background */
+  color: white;
+  padding: 15px 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #FFB600; /* Darker yellow on hover */
+}
+
+/* Hamburger Menu for Mobile */
+.navbar-toggle {
+  display: none;  /* Hidden by default */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navbar-toggle div {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+/* Responsive Styles for Navbar */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;  /* Hide the navbar links by default */
+    width: 100%;
+    flex-direction: column;
+    background-color: #FFB600; /* Yellow background for dropdown */
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav.active ul {
+    display: flex;  /* Show links when active */
+  }
+
+  .navbar-toggle {
+    display: flex;  /* Show hamburger menu on mobile */
+  }
+
+  nav.active .navbar-toggle div:nth-child(1) {
+    transform: rotate(45deg); /* Rotate first bar */
+  }
+
+  nav.active .navbar-toggle div:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+  }
+
+  nav.active .navbar-toggle div:nth-child(3) {
+    transform: rotate(-45deg); /* Rotate third bar */
+  }
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-photo {
+  width: 150px; /* Adjust the size of the image */
+  height: 150px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover;
+  float: right;
+}
+
+.about-text {
+  flex: 1; /* Ensures the text takes up the remaining space */
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-photo {
+    float: none; /* Remove float on smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+/* Section Styles */
+section {
+  padding: 100px 20px;
+  margin-top: 50px; /* Offset for fixed navbar */
+  text-align: center;
+  background-color: #ffe77d;  /* Light yellow for clean look */
+  border-bottom: 1px solid #ddd;
+}
+
+section:last-of-type {
+  border-bottom: none; /* Remove border for last section */
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #6A0DAD; /* Purple for section titles */
+}
+
+p, ul {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+/* Buttons */
+button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  color: white;
+  background-color: #FFCC00;  /* Yellow background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FFB600;  /* Slightly darker yellow on hover */
+}
+
+/* Input and Textarea */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 150px;
+}
+
+/* Projects Cards */
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #4B0082; /* Purple for card titles */
+}
+
+.card p {
+  color: #555;
+}
+
+/* Footer (optional) */
+footer {
+  padding: 30px 0;
+  text-align: center;
+  background-color: #FFDC00; /* Bright yellow footer background */
+  color: white;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #FFB600;  /* Dark yellow links */
   text-decoration: none;
 }
 
