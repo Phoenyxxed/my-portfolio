@@ -62,9 +62,12 @@ const Projects = () => (
   <section id="projects">
     <h2>My Projects</h2>
     <ul>
-      <li><strong>Project 1:</strong> A web app built with React and Node.js.</li>
-      <li><strong>Project 2:</strong> An e-commerce website with Stripe integration.</li>
+      <li><strong>Project 1:</strong> A web app built with React, emailjs, vite, and vercel.</li>
+      <li><strong>Project 2:</strong> A functioning website where you can play yahtzee.</li>
+      <li><strong>Project 3:</strong> A visual novel game where I drew the designs and coded all of the choices in RenPy</li>
+      <li><strong>Project 4:</strong> An object-oriented version of Rock, Paper, Scissors made in Java.</li>
     </ul>
+    <p>All of these projects can be found and seen on my github page <a href="https://github.com/Phoenyxxed" target="_blank" rel="noopener noreferrer">@Phoenyxxed</a></p>
   </section>
 );
 
@@ -73,9 +76,9 @@ const Technologies = () => (
   <section id="technologies">
     <h2>Technologies I Know How To Use</h2>
     <p>
-    I know how to code in HTML, CSS, javascript, python and java! 
-    I know how to use Adobe Premiere and Photoshop. I also have certifications in Microsoft Word, Excel, and Powerpoint.
-    I know how to make ethernet cables and how to build PC's which I do for fun and 
+    I know how to code in HTML, CSS, javascript, python and java! <br/>
+    I know how to use Adobe Premiere and Photoshop. I also have certifications in Microsoft Word, Excel, and Powerpoint. <br/>
+    I know how to make ethernet cables and how to build PC's which I do for fun and for friends when they ask! <br/>
     </p>
   </section>
 );
