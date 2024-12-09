@@ -29,7 +29,7 @@ const Navbar = () => {
 const About = () => (
   <section id="about">
     <div className="about-container">
-      <img src="assets\images\Co1stDay.JPG" alt="Phoenyx Meira" className="about-photo" />
+      <img src="src\assets\images\Co1stDay.JPG" alt="Phoenyx Meira" className="about-photo" />
       <div className="about-text">
         <h2>About Me</h2>
         <p>Hello! My name is Phoenyx Meira. I am a 20 year-old Brazilian-American from New Haven, CT. 
